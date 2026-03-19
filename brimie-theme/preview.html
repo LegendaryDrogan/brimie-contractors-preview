@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brimie Contractors — Theme Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <style>
+        /* Preview-only: page navigation tabs */
+        .preview-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: #111;
+            border-top: 3px solid var(--color-secondary);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            padding: 0;
+            font-family: var(--font-heading);
+        }
+        .preview-nav a {
+            color: rgba(255,255,255,0.7);
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .preview-nav a:hover,
+        .preview-nav a.active {
+            color: var(--color-secondary);
+            background: rgba(255,255,255,0.05);
+        }
+        .preview-note {
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            padding: 0.5rem 1.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+        body { padding-bottom: 50px; }
+
+        /* Preview placeholder images */
+        .preview-img-placeholder {
+            background: linear-gradient(135deg, #e0dcd4 0%, #c8c4bc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .project-image .preview-img-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER (shared across all pages)
+     ============================================================ -->
+<header class="site-header" id="site-header">
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <span class="top-bar-item veteran-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Veteran Owned
+                </span>
+                <a href="tel:3035551234" class="top-bar-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    (303) 555-1234
+                </a>
+                <a href="mailto:info@brimiecontractors.com" class="top-bar-item">
+                    info@brimiecontractors.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="site-logo" onclick="showPage('home'); return false;">
+                    <span class="site-title">Brimie Contractors</span>
+                </a>
+
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+                    <ul class="nav-menu">
+                        <li class="current-menu-item"><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                        <li><a href="#" onclick="showPage('agents'); return false;">Agents</a></li>
+                        <li><a href="#" onclick="showPage('investors'); return false;">Investors</a></li>
+                        <li><a href="#" onclick="showPage('homeowners'); return false;">Homeowners</a></li>
+                        <li><a href="#" onclick="showPage('projects'); return false;">Projects</a></li>
+                        <li><a href="#" onclick="showPage('partners'); return false;">Trusted Partners</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                    </ul>
+                    <a href="#" onclick="showPage('contact'); return false;" class="nav-cta-btn">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="site-main">
+
+<!-- ============================================================
+     HOME PAGE
+     ============================================================ -->
+<div class="page-section active" id="page-home">
+
+    <section class="hero" id="hero">
+        <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active hero-slide--placeholder"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-headline">No Job Too Small. Done Right.</h1>
+                <p class="hero-subheadline">Veteran-owned residential construction with over 30 years of combined experience serving the Denver Metro Area.</p>
+                <div class="hero-buttons">
+                    <a href="#" onclick="showPage('agents'); return false;" class="btn btn--primary">For Real Estate Agents</a>
+                    <a href="#" onclick="showPage('investors'); return false;" class="btn btn--secondary">For Investors</a>
+                    <a href="#" onclick="showPage('homeowners'); return false;" class="btn btn--secondary">For Homeowners</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">How We Help</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h3>Real Estate Agents</h3>
+                    <p>Submit inspection reports and receive repair estimates within 3–4 business days. We provide closing documentation with before-and-after photos.</p>
+                    <a href="#" onclick="showPage('agents'); return false;" class="btn btn--outline">Submit Inspection Report</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    </div>
+                    <h3>Real Estate Investors</h3>
+                    <p>Practical renovation decisions, efficient timelines, and reliable execution. From full property updates to market-ready preparations.</p>
+                    <a href="#" onclick="showPage('investors'); return false;" class="btn btn--outline">Learn More</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <h3>Homeowners</h3>
+                    <p>Kitchen remodels, bathroom renovations, deck construction, and basement finishing. Quality craftsmanship and clear communication throughout.</p>
+                    <a href="#" onclick="showPage('homeowners'); return false;" class="btn btn--outline">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="workflow-section">
+        <div class="container">
+            <h2 class="section-title">How It Works for Agents</h2>
+            <p class="section-subtitle">From inspection report to closing documentation in three simple steps</p>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Submit</h3>
+                    <p>Upload the inspection report and requested resolutions through our online form.</p>
+                </div>
+                <div class="workflow-connector"></div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>Estimate</h3>
+                    <p>We review everything and provide a repair estimate within 3–4 business days.</p>
+                </div>
+                <div class="workflow-connector"></div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Complete</h3>
+                    <p>We complete repairs and deliver closing documentation with before-and-after photos.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="#" onclick="showPage('agents'); return false;" class="btn btn--primary">Submit an Inspection Report</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title section-title--left">Why Brimie?</h2>
+                    <p class="about-origin">The name Brimie comes from the brim fish. You can spend all day chasing one big fish, or you can keep catching brim and fill the cooler.</p>
+                    <p>At Brimie Contractors no job is too small. Whether it is a quick inspection repair or a full renovation, every project is approached with the same commitment to doing the work right.</p>
+                    <p>Brimie Contractors is a veteran-owned residential construction company founded by Jason Longmore. Jason served 12 years in the United States Navy, including 8 years as a Naval Parachutist Parachute Rigger and 4 years as a Seabee in Naval Construction.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Years Combined Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Years Military Service</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <span>Veteran Owned</span>
+                        <span>Denver Metro Area</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recent-projects">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image"><div class="preview-img-placeholder">Kitchen Remodel</div></div>
+                    <div class="project-info"><h3>Modern Kitchen Renovation</h3><p>Full kitchen overhaul with new cabinets, countertops, and flooring.</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="preview-img-placeholder">Bathroom Reno</div></div>
+                    <div class="project-info"><h3>Master Bathroom Update</h3><p>Tile, vanity, and fixture replacement with modern finishes.</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="preview-img-placeholder">Deck Build</div></div>
+                    <div class="project-info"><h3>Composite Deck Build</h3><p>New composite deck designed for Colorado's outdoor living.</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="preview-img-placeholder">Basement Finish</div></div>
+                    <div class="project-info"><h3>Basement Finishing</h3><p>Full basement finish including framing, drywall, and flooring.</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="preview-img-placeholder">Exterior Work</div></div>
+                    <div class="project-info"><h3>Curb Appeal Upgrade</h3><p>Exterior repairs, painting, and landscaping improvements.</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="preview-img-placeholder">Full Renovation</div></div>
+                    <div class="project-info"><h3>Whole Home Renovation</h3><p>Complete interior update for resale preparation.</p></div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="#" onclick="showPage('projects'); return false;" class="btn btn--outline">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Whether you need an inspection repair estimate, a renovation plan, or a kitchen remodel — we're here to help.</p>
+            <div class="cta-buttons">
+                <a href="#" onclick="showPage('agents'); return false;" class="btn btn--white">Agents: Submit Report</a>
+                <a href="#" onclick="showPage('contact'); return false;" class="btn btn--white-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ============================================================
+     AGENTS PAGE
+     ============================================================ -->
+<div class="page-section" id="page-agents">
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Real Estate Agents</h1>
+            <p class="page-hero-subtitle">Inspection resolution estimates and pre-sale renovation assessments</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-narrow">
+                <p class="lead-text">Real estate transactions move quickly and inspection reports often create a short window to resolve repair items before closing. Submit inspection reports and requested resolutions through the form below. Brimie Contractors reviews the information and responds with an estimate within 3–4 business days.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="workflow-section workflow-section--light">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Submit</h3>
+                    <p>Submit the inspection report and requested resolutions through the website form.</p>
+                </div>
+                <div class="workflow-connector"></div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>Review &amp; Estimate</h3>
+                    <p>Brimie Contractors reviews the information and provides a repair estimate within 3–4 business days.</p>
+                </div>
+                <div class="workflow-connector"></div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Complete &amp; Document</h3>
+                    <p>If repair work moves forward, Brimie completes the work and provides closing documentation including before-and-after photos and a summary of completed repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="inspection-form">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title">Inspection Resolution Estimate Request</h2>
+                <p class="form-intro">Fill out the form below and upload relevant documents. We'll respond with an estimate within 3–4 business days.</p>
+
+                <form class="brimie-form" onsubmit="alert('This is a preview — form submissions are disabled.'); return false;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="agent_name">Agent Name <span class="required">*</span></label>
+                            <input type="text" id="agent_name" name="agent_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="brokerage">Brokerage / Company</label>
+                            <input type="text" id="brokerage" name="brokerage">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="property_address">Property Address <span class="required">*</span></label>
+                            <input type="text" id="property_address" name="property_address">
+                        </div>
+                        <div class="form-group">
+                            <label for="closing_date">Closing Date (optional)</label>
+                            <input type="date" id="closing_date" name="closing_date">
+                        </div>
+                    </div>
+
+                    <div class="form-section-divider">
+                        <h3>File Uploads</h3>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="inspection_report">Inspection Report (PDF preferred)</label>
+                            <input type="file" id="inspection_report" name="inspection_report">
+                            <span class="form-help">PDF, DOC, or image files accepted</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="resolution_request">Inspection Resolution Request</label>
+                            <input type="file" id="resolution_request" name="resolution_request">
+                            <span class="form-help">Optional if included in the inspection report</span>
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="additional_photos">Additional Photos</label>
+                            <input type="file" id="additional_photos" name="additional_photos" multiple>
+                            <span class="form-help">Upload multiple photos of the property or areas of concern</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group--full">
+                        <label for="message">Additional Notes</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Any additional details about the property or repair items..."></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn--primary btn--large">Submit Estimate Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section content-section--alt">
+        <div class="container">
+            <div class="content-narrow">
+                <h2 class="section-title">Closing Documentation</h2>
+                <p>For inspection repair work that is completed, Brimie Contractors provides a comprehensive completion report that can be shared with buyers and included with closing documentation. The report includes:</p>
+                <ul class="feature-list">
+                    <li>Summary of completed work</li>
+                    <li>Before-and-after photos</li>
+                    <li>Clear outline of the repair scope addressed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section cta-section--compact">
+        <div class="container">
+            <div class="cta-inline">
+                <div class="cta-inline-content">
+                    <h2>Pre-Sale Renovation Assessment</h2>
+                    <p>Preparing to list a property? Request an onsite walkthrough to identify health, safety, and habitability items that may need attention prior to listing.</p>
+                </div>
+                <a href="#" onclick="showPage('contact'); return false;" class="btn btn--white btn--large">Request Assessment</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ============================================================
+     INVESTORS PAGE
+     ============================================================ -->
+<div class="page-section" id="page-investors">
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Real Estate Investors</h1>
+            <p class="page-hero-subtitle">Renovation support for property investment projects</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-narrow">
+                <p class="lead-text">Brimie Contractors works with real estate investors to renovate and prepare properties for resale or rental. Our team understands the importance of practical renovation decisions, efficient timelines, and reliable construction execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail">
+        <div class="container">
+            <h2 class="section-title">Investor Renovation Services</h2>
+            <div class="services-icon-grid">
+                <div class="service-icon-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <h3>Whole Home Renovations</h3>
+                    <p>Complete interior and exterior property transformations for resale or rental readiness.</p>
+                </div>
+                <div class="service-icon-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <h3>Interior Updates</h3>
+                    <p>Kitchens, bathrooms, flooring, and drywall — targeted improvements that maximize return.</p>
+                </div>
+                <div class="service-icon-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    <h3>Exterior &amp; Curb Appeal</h3>
+                    <p>Exterior repairs and improvements that create strong first impressions for buyers.</p>
+                </div>
+                <div class="service-icon-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    <h3>Structural Repairs</h3>
+                    <p>Framing and structural repairs when required to meet inspection and safety standards.</p>
+                </div>
+                <div class="service-icon-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <h3>Market-Ready Preparation</h3>
+                    <p>Strategic improvements focused on making properties competitive in the current market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section content-section--alt">
+        <div class="container">
+            <div class="content-narrow">
+                <h2 class="section-title">Renovation Strategy for Investors</h2>
+                <p>Our goal is to help investors focus on improvements that matter most. During project discussions we help identify:</p>
+                <ul class="feature-list">
+                    <li>Health and safety improvements</li>
+                    <li>Functional repairs affecting inspection results</li>
+                    <li>Practical upgrades that improve market appeal</li>
+                    <li>Cost-effective decisions that protect the overall investment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Typical Investor Projects</h2>
+            <div class="project-type-grid">
+                <div class="project-type-card"><h3>Full Interior Updates</h3><p>Complete property refreshes including paint, flooring, fixtures, and finishes throughout.</p></div>
+                <div class="project-type-card"><h3>Kitchen &amp; Bath Modernization</h3><p>Targeted updates to the spaces that matter most to buyers and renters.</p></div>
+                <div class="project-type-card"><h3>Flooring &amp; Interior Repairs</h3><p>New flooring, drywall repairs, trim, and finish work that transforms a space.</p></div>
+                <div class="project-type-card"><h3>Pre-Listing Exterior Work</h3><p>Exterior improvements designed to boost curb appeal before the property hits the market.</p></div>
+                <div class="project-type-card"><h3>Inspection-Driven Repairs</h3><p>Structural and safety repairs identified during property inspections.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have a Property to Renovate?</h2>
+            <p>Let's discuss your investment project and build a practical renovation plan.</p>
+            <a href="#" onclick="showPage('contact'); return false;" class="btn btn--white btn--large">Get in Touch</a>
+        </div>
+    </section>
+</div>
+
+<!-- ============================================================
+     HOMEOWNERS PAGE
+     ============================================================ -->
+<div class="page-section" id="page-homeowners">
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Homeowners</h1>
+            <p class="page-hero-subtitle">Quality craftsmanship and clear communication for your home renovation</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-narrow">
+                <p class="lead-text">Your home is your biggest investment. Whether you're updating a kitchen, renovating a bathroom, building a deck, or finishing a basement, Brimie Contractors brings veteran discipline, quality craftsmanship, and honest communication to every project.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail">
+        <div class="container">
+            <h2 class="section-title">Renovation Services</h2>
+            <div class="homeowner-services-grid">
+                <div class="homeowner-service">
+                    <div class="homeowner-service-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </div>
+                    <div>
+                        <h3>Kitchen Remodeling</h3>
+                        <p>From cabinet installation and countertops to full kitchen overhauls. We work with you to design a space that fits your lifestyle and budget.</p>
+                    </div>
+                </div>
+                <div class="homeowner-service">
+                    <div class="homeowner-service-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Bathroom Renovations</h3>
+                        <p>Tile, vanities, fixtures, showers, and tubs. Complete bathroom renovations that combine function with a clean, modern finish.</p>
+                    </div>
+                </div>
+                <div class="homeowner-service">
+                    <div class="homeowner-service-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><polyline points="16 3 12 7 8 3"></polyline></svg>
+                    </div>
+                    <div>
+                        <h3>Deck Construction</h3>
+                        <p>New deck builds and existing deck repairs. Composite or wood, designed for Colorado's climate and your outdoor living goals.</p>
+                    </div>
+                </div>
+                <div class="homeowner-service">
+                    <div class="homeowner-service-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <div>
+                        <h3>Basement Finishing</h3>
+                        <p>Turn unused space into functional living areas. Framing, drywall, flooring, electrical, and everything in between.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section content-section--alt">
+        <div class="container">
+            <h2 class="section-title">What to Expect</h2>
+            <div class="expect-grid">
+                <div class="expect-card"><h3>Clear Communication</h3><p>You'll always know what's happening with your project. No surprises, no runarounds.</p></div>
+                <div class="expect-card"><h3>Quality Work</h3><p>Every detail matters. We take pride in work that lasts and finishes that impress.</p></div>
+                <div class="expect-card"><h3>Honest Pricing</h3><p>Straightforward estimates with no hidden fees. We respect your budget and your home.</p></div>
+                <div class="expect-card"><h3>Veteran Values</h3><p>Discipline, reliability, and accountability. The same standards that serve our country serve your project.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Tell us about your renovation plans and we'll schedule a consultation.</p>
+            <div class="cta-buttons">
+                <a href="#" onclick="showPage('contact'); return false;" class="btn btn--white btn--large">Request a Consultation</a>
+                <a href="#" onclick="showPage('projects'); return false;" class="btn btn--white-outline btn--large">View Our Work</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ============================================================
+     PROJECTS PAGE
+     ============================================================ -->
+<div class="page-section" id="page-projects">
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Projects</h1>
+            <p class="page-hero-subtitle">Real work. Real results. See what we've built.</p>
+        </div>
+    </section>
+
+    <section class="projects-gallery">
+        <div class="container">
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="kitchens">Kitchens</button>
+                <button class="filter-btn" data-filter="bathrooms">Bathrooms</button>
+                <button class="filter-btn" data-filter="decks">Decks</button>
+                <button class="filter-btn" data-filter="basements">Basements</button>
+                <button class="filter-btn" data-filter="exterior">Exterior</button>
+            </div>
+
+            <div class="projects-grid projects-grid--gallery" id="projects-grid">
+                <div class="project-card" data-category="kitchens">
+                    <div class="project-image"><div class="preview-img-placeholder">Kitchen Photo</div><div class="project-overlay"><span class="project-view">View Project</span></div></div>
+                    <div class="project-info"><h3>Modern Kitchen Renovation</h3><span class="project-category-label">Kitchens</span><p>Complete kitchen remodel with custom cabinetry.</p></div>
+                </div>
+                <div class="project-card" data-category="bathrooms">
+                    <div class="project-image"><div class="preview-img-placeholder">Bathroom Photo</div><div class="project-overlay"><span class="project-view">View Project</span></div></div>
+                    <div class="project-info"><h3>Master Bath Remodel</h3><span class="project-category-label">Bathrooms</span><p>Walk-in shower, double vanity, and heated floors.</p></div>
+                </div>
+                <div class="project-card" data-category="decks">
+                    <div class="project-image"><div class="preview-img-placeholder">Deck Photo</div><div class="project-overlay"><span class="project-view">View Project</span></div></div>
+                    <div class="project-info"><h3>Composite Deck Build</h3><span class="project-category-label">Decks</span><p>Multi-level composite deck with built-in seating.</p></div>
+                </div>
+                <div class="project-card" data-category="basements">
+                    <div class="project-image"><div class="preview-img-placeholder">Basement Photo</div><div class="project-overlay"><span class="project-view">View Project</span></div></div>
+                    <div class="project-info"><h3>Basement Entertainment Room</h3><span class="project-category-label">Basements</span><p>Full basement finish with entertainment area and wet bar.</p></div>
+                </div>
+                <div class="project-card" data-category="exterior">
+                    <div class="project-image"><div class="preview-img-placeholder">Exterior Photo</div><div class="project-overlay"><span class="project-view">View Project</span></div></div>
+                    <div class="project-info"><h3>Curb Appeal Package</h3><span class="project-category-label">Exterior</span><p>Siding, paint, and landscaping refresh for market prep.</p></div>
+                </div>
+                <div class="project-card" data-category="kitchens">
+                    <div class="project-image"><div class="preview-img-placeholder">Kitchen Photo</div><div class="project-overlay"><span class="project-view">View Project</span></div></div>
+                    <div class="project-info"><h3>Investor Kitchen Update</h3><span class="project-category-label">Kitchens</span><p>Budget-friendly kitchen refresh for rental property.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Like What You See?</h2>
+            <p>Let's talk about your next project.</p>
+            <a href="#" onclick="showPage('contact'); return false;" class="btn btn--white btn--large">Get in Touch</a>
+        </div>
+    </section>
+</div>
+
+<!-- ============================================================
+     TRUSTED PARTNERS PAGE
+     ============================================================ -->
+<div class="page-section" id="page-partners">
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Trusted Partners</h1>
+            <p class="page-hero-subtitle">Professionals we know and trust in the Denver Metro Area</p>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="content-narrow">
+                <p class="lead-text">We believe in building strong relationships with other professionals in the industry. These are trusted partners we confidently recommend — real estate agents, mortgage professionals, inspectors, and other service providers who share our commitment to quality and reliability.</p>
+            </div>
+
+            <div class="partner-category">
+                <h2 class="partner-category-title">Real Estate Agents</h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-info">
+                            <h3>Jane Smith</h3>
+                            <p class="partner-company">Denver Premier Realty</p>
+                            <p class="partner-specialty">Residential Sales</p>
+                            <div class="partner-contact">
+                                <a href="tel:3035555678">(303) 555-5678</a>
+                                <a href="mailto:jane@example.com">jane@example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-info">
+                            <h3>Mike Johnson</h3>
+                            <p class="partner-company">Front Range Real Estate</p>
+                            <p class="partner-specialty">Investment Properties</p>
+                            <div class="partner-contact">
+                                <a href="tel:3035559012">(303) 555-9012</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-category">
+                <h2 class="partner-category-title">Mortgage Professionals</h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-info">
+                            <h3>Sarah Williams</h3>
+                            <p class="partner-company">Colorado Home Lending</p>
+                            <p class="partner-specialty">Conventional & FHA Loans</p>
+                            <div class="partner-contact">
+                                <a href="tel:3035553456">(303) 555-3456</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-category">
+                <h2 class="partner-category-title">Home Inspectors</h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-info">
+                            <h3>Tom Davis</h3>
+                            <p class="partner-company">Mile High Inspections</p>
+                            <p class="partner-specialty">Residential Inspections</p>
+                            <div class="partner-contact">
+                                <a href="tel:3035557890">(303) 555-7890</a>
+                                <a href="#">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to Join Our Network?</h2>
+            <p>If you're a professional in the Denver Metro real estate industry, we'd love to connect.</p>
+            <a href="#" onclick="showPage('contact'); return false;" class="btn btn--white btn--large">Get in Touch</a>
+        </div>
+    </section>
+</div>
+
+<!-- ============================================================
+     CONTACT PAGE
+     ============================================================ -->
+<div class="page-section" id="page-contact">
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p class="page-hero-subtitle">Let's talk about your project</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <form class="brimie-form" onsubmit="alert('This is a preview — form submissions are disabled.'); return false;">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="contact_name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="contact_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="contact_email">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_phone">Phone Number</label>
+                                <input type="tel" id="contact_phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_service">I'm a...</label>
+                                <select id="contact_service">
+                                    <option value="">Select one</option>
+                                    <option>Real Estate Agent</option>
+                                    <option>Real Estate Investor</option>
+                                    <option>Homeowner</option>
+                                    <option>Partner / Professional</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_message">How Can We Help? <span class="required">*</span></label>
+                            <textarea id="contact_message" rows="5" placeholder="Tell us about your project, property, or question..."></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="contact-info-sidebar">
+                    <div class="contact-info-card">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-info-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:3035551234">(303) 555-1234</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:info@brimiecontractors.com">info@brimiecontractors.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <strong>Service Area</strong>
+                                <span>Denver Metro Area</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3>Quick Links</h3>
+                        <ul class="contact-quick-links">
+                            <li><a href="#" onclick="showPage('agents'); return false;">Submit Inspection Report</a></li>
+                            <li><a href="#" onclick="showPage('investors'); return false;">Investor Services</a></li>
+                            <li><a href="#" onclick="showPage('homeowners'); return false;">Homeowner Services</a></li>
+                            <li><a href="#" onclick="showPage('projects'); return false;">View Our Work</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info-card contact-info-card--highlight">
+                        <h3>Real Estate Agent?</h3>
+                        <p>Need an inspection repair estimate? Skip the contact form and go straight to our dedicated agent portal.</p>
+                        <a href="#" onclick="showPage('agents'); return false;" class="btn btn--primary">Submit Inspection Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</main>
+
+<!-- ============================================================
+     FOOTER (shared)
+     ============================================================ -->
+<footer class="site-footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="#" onclick="showPage('home'); return false;" class="footer-logo">
+                        <span class="site-title">Brimie Contractors</span>
+                    </a>
+                    <p class="footer-tagline">Veteran Owned Residential Construction</p>
+                    <p class="footer-area">Serving the Denver Metro Area</p>
+                </div>
+
+                <div class="footer-col footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                        <li><a href="#" onclick="showPage('agents'); return false;">Agents</a></li>
+                        <li><a href="#" onclick="showPage('investors'); return false;">Investors</a></li>
+                        <li><a href="#" onclick="showPage('homeowners'); return false;">Homeowners</a></li>
+                        <li><a href="#" onclick="showPage('projects'); return false;">Projects</a></li>
+                        <li><a href="#" onclick="showPage('partners'); return false;">Trusted Partners</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-services">
+                    <h4>Services</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" onclick="showPage('agents'); return false;">Inspection Repairs</a></li>
+                        <li><a href="#" onclick="showPage('investors'); return false;">Investor Renovations</a></li>
+                        <li><a href="#" onclick="showPage('homeowners'); return false;">Home Remodeling</a></li>
+                        <li><a href="#" onclick="showPage('projects'); return false;">Project Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact-info">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact-list">
+                        <li><a href="tel:3035551234">(303) 555-1234</a></li>
+                        <li><a href="mailto:info@brimiecontractors.com">info@brimiecontractors.com</a></li>
+                        <li>Denver Metro Area</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Google</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Brimie Contractors LLC. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Preview Page Navigation -->
+<nav class="preview-nav">
+    <span class="preview-note">PREVIEW</span>
+    <a href="#" class="active" onclick="showPage('home'); return false;">Home</a>
+    <a href="#" onclick="showPage('agents'); return false;">Agents</a>
+    <a href="#" onclick="showPage('investors'); return false;">Investors</a>
+    <a href="#" onclick="showPage('homeowners'); return false;">Homeowners</a>
+    <a href="#" onclick="showPage('projects'); return false;">Projects</a>
+    <a href="#" onclick="showPage('partners'); return false;">Partners</a>
+    <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+</nav>
+
+<script>
+// Page switching for preview
+function showPage(page) {
+    // Hide all pages
+    document.querySelectorAll('.page-section').forEach(function(el) {
+        el.classList.remove('active');
+    });
+
+    // Show selected page
+    var target = document.getElementById('page-' + page);
+    if (target) {
+        target.classList.add('active');
+    }
+
+    // Update preview nav active state
+    document.querySelectorAll('.preview-nav a').forEach(function(el) {
+        el.classList.remove('active');
+    });
+    event.target.classList.add('active');
+
+    // Update header nav active state
+    document.querySelectorAll('.nav-menu li').forEach(function(el) {
+        el.classList.remove('current-menu-item');
+    });
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Close mobile menu if open
+    var toggle = document.getElementById('mobile-menu-toggle');
+    var wrapper = document.getElementById('nav-menu-wrapper');
+    if (toggle && wrapper) {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('active');
+        wrapper.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+}
+
+// Mobile menu toggle
+var menuToggle = document.getElementById('mobile-menu-toggle');
+var navWrapper = document.getElementById('nav-menu-wrapper');
+
+if (menuToggle && navWrapper) {
+    menuToggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        this.classList.toggle('active');
+        navWrapper.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+}
+
+// Sticky header
+var header = document.getElementById('site-header');
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Project filter (preview version)
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var filter = this.dataset.filter;
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+
+        document.querySelectorAll('.projects-grid--gallery .project-card').forEach(function(card) {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
